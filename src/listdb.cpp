@@ -18,6 +18,16 @@ void load_pwlist_db()
     printf("read %d passwords into vector\n", (int)list_sz);
 }
 
+size_t total_size()
+{
+    return password_list.size();
+}
+
+void password_at(size_t pos, std::string& password)
+{
+    password = password_list[pos];
+}
+
 void next_password(std::string& password)
 {
     password = password_list[list_pos++];

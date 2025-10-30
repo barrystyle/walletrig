@@ -17,6 +17,8 @@ OBJ =   src/base58.o              \
 
 walletrig: $(OBJ)
 	$(CC) -o $@ $^ $(CPPFLAGS)
+
 clean:
+	rm -f walletrig
 	rm -f src/*.o
 	rm -f src/*/*.o
