@@ -23,8 +23,7 @@ static void worker_thread(int id, size_t st)
     while (!quitAll) {
         printf("\033[%d;0H [thread%02d] %d / %d", id+1, id, (int) stn, (int) (total_size() / total_threads));
         password_at(st, passphrase);
-        pwalletMain->UnlockVerbose(passphrase, errorLevel);
-        if (errorLevel == 0) {
+        if (pwalletMain->UnlockVerbose(passphrase, errorLevel)) {
             quitAll = true;
             printf("\n\nfound passphrase was '%s'\n\n", passphrase.c_str());
             return;
