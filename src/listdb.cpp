@@ -6,7 +6,7 @@ std::vector<std::string> password_list;
 
 void load_pwlist_db()
 {
-    std::ifstream file("../kaonashi14M.txt");
+    std::ifstream file("./kaonashi14M.txt");
 
     std::string line;
     while (std::getline(file, line)) {
